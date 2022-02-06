@@ -3,9 +3,11 @@ import './style.css';
 
 const [count, setCount] = createSignal(1);
 const doubleCount = () => count() * 2;
+createEffect(() => (h1.textContent = String(doubleCount())));
 
 const appDiv: HTMLElement = document.getElementById('app');
-createEffect(() => (appDiv.innerHTML = `<h1>${doubleCount()}</h1>`));
-
-setTimeout(() => setCount(5), 1000);
-setTimeout(() => setCount(30), 3000);
+const h1 = document.createElement('h1');
+const button = document.createElement('button');
+button.textContent = 'Click me';
+button.onclick = () => setCount(30);
+appDiv.append(h1, button);
