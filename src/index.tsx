@@ -1,6 +1,6 @@
 import { createSignal, createEffect } from 'solid-js';
 import { render } from 'solid-js/web';
-import './style.css';
+import '../style.css';
 
 const [count, setCount] = createSignal(1);
 const doubleCount = () => count() * 2;
