@@ -1,11 +1,11 @@
-import { createSignal, createMemo } from 'solid-js';
+import { createSignal, createEffect } from 'solid-js';
 import './style.css';
 
-const [count, setCount] = createSignal(1); // Create -  In every reactive framework there is the concept of the signal with mutable data
-const doubleCount = () => count() * 2; // Derive - The concept of deriving the data
-createMemo(() => console.log(doubleCount())); // Effect -  The concept of the side effect
+const [count, setCount] = createSignal(1);
+const doubleCount = () => count() * 2;
 
-// The above three create a magic pattern for reactivity
+const appDiv: HTMLElement = document.getElementById('app');
+createEffect(() => (appDiv.innerHTML = `<h1>${doubleCount()}</h1>`));
 
-setCount(5);
-setCount(30);
+setTimeout(() => setCount(5), 1000);
+setTimeout(() => setCount(30), 3000);
