@@ -23,12 +23,12 @@ Created with StackBlitz ⚡️
 
 # Comparison between frameworks dom changes
 
-|  Framework | Reactivity  |  Virtual dom |   |   |
-|---|---|---|---|---|
-|  Solidjs |  [x] |  [] |   |   |
-|  React |  [] |  [x] |   |   |
-|  Vue |  [x] |  [x] |   |   |
-|  Svelte |  [x] |  [] |   |   |
+|  Framework | Reactivity  |  Virtual dom |  Compiler |
+|---|---|---|---|
+|  Solidjs |  ✅ |   |   |
+|  React |   | ✅ |   |
+|  Vue | ✅ | ✅ |   |
+|  Svelte | ✅ |   | ✅ |
 
 
 *Difference with Vue is the VDom, Vue's reactivity is close via the composition api but they use this reactivity not to update the real dom but instead for updating then VDom
